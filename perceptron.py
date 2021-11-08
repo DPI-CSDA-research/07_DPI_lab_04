@@ -58,6 +58,7 @@ class NeuralNetwork:
 
         # Обновим весовые коэфициенты между входным и скрытым слоем сети
         self.w_i_h += self.rate * np.dot((h_errors * h_outputs * (1 - h_outputs)), inputs.T)
+        return np.linalg.norm(o_errors)
 
     def predict(self, input_list):
         """Опрос нейронной сети - получение значений сигналов выходных узлов
